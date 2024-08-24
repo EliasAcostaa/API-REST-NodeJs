@@ -1,0 +1,17 @@
+version: "3.1"
+
+services:
+  elias_db:
+    image: mysql:5.7
+    volumes:
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: --init-file /docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3312:3306"
+    environment:
+      MYSQL_DATABASE: elias_db
+      MYSQL_ROOT_USER: uelias
+      MYSQL_USER: uelias
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_PASSWORD: secret
+    
