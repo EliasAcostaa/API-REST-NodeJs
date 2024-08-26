@@ -9,16 +9,16 @@ export abstract class BaseEntity {
         name: "created_at",
         type: "timestamp",
     })
-    createdAd!: Date;
+    createdAt!: Date;
 
     @UpdateDateColumn({
         name: "updated_at",
         type: "timestamp",
     })
-    uptatedAd!: Date;
+    uptatedAt!: Date;
 }
 
 
 //id
-//created_ad
-//updated_ad
+//created_at
+//updated_at
