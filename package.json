@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "api rest con nodejs y typescript",
   "main": "index.js",
+  "type":"module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && node dist/server.js",
     "start:dev": "tsc && concurrently \"tsc -w\" \"nodemon dist/server.js\"",
-    "start:prod": "SET NODE_ENV=production && npm start"
+    "start:prod": "SET NODE_ENV=production && npm start",
+    "typeorm": "typeorm-ts-node-esm -d ./src/config/data.source.ts",
+    "m:gen": "npm run typeorm migration:generate",
+    "m:run": "npm run typeorm migration:run"
   },
   "repository": {
     "type": "git",
@@ -20,12 +24,15 @@
   },
   "homepage": "https://github.com/EliasAcostaa/API-REST-NodeJs#readme",
   "dependencies": {
+    "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
+    "reflect-metadata": "^0.2.2",
+    "tsconfig-paths": "^4.2.0",
     "typeorm": "^0.3.20",
     "typeorm-naming-strategies": "^4.1.0",
     "typescript": "^5.5.4"
@@ -34,7 +41,9 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/morgan": "^1.9.9",
+    "@types/node": "^22.5.4",
     "concurrently": "^8.2.2",
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2"
   }
 }

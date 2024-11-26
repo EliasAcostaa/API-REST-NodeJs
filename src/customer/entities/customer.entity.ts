@@ -1,21 +1,20 @@
 import { Column, Entity, JoinColumn, OneToMany, OneToOne } from "typeorm";
 import { BaseEntity } from "../../config/base.entity";
-import { UserEntity } from "../../user/entitites/user.entity";
 import { PurchaseEntity } from "../../purchase/entities/purchase.entity";
+import { UserEntity } from "../../user/entitites/user.entity";
 
-@Entity({name: "customer"})
+@Entity({ name: "customer" })
 export class CustomerEntity extends BaseEntity {
+  @Column()
+  address!: string;
 
-    @Column()
-    adress!: string;
+  @Column()
+  dni!: number;
 
-    @Column()
-    dni!: number;
+  @OneToOne(() => UserEntity, (user) => user.customer)
+  @JoinColumn({ name: "user_id" })
+  user!: UserEntity;
 
-    @OneToOne(() => UserEntity, (user) => user.customer)
-    @JoinColumn({name: "user_id"})
-    user!: UserEntity;
-
-    @OneToMany(() => PurchaseEntity, (purchase) => purchase.customer)
-    purchases!: PurchaseEntity[];
+  @OneToMany(() => PurchaseEntity, (purchase) => purchase.customer)
+  purchases!: PurchaseEntity[];
 }
