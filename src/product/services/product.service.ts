@@ -1,4 +1,4 @@
-import { DeleteResult, UpdateResult } from "typeorm";
+import { DeleteResult, ILike, UpdateResult } from "typeorm";
 import { BaseService } from "../../config/base.service";
 import { ProductDTO } from "../dto/product.dto";
 
@@ -13,6 +13,13 @@ export class ProductService extends BaseService<ProductEntity> {
   }
   async findProductById(id: string): Promise<ProductEntity | null> {
     return (await this.execRepository).findOneBy({ id });
+  }
+  async findProductByName(productName: string): Promise<ProductEntity | null> {
+    return (await this.execRepository).findOne({
+      where: {
+        productName: ILike(`%${productName}%`), 
+      },
+    });
   }
   async createProduct(body: ProductDTO): Promise<ProductEntity> {
     return (await this.execRepository).save(body);

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { HttpResponse } from "../../shared/response/http.response";
-import { UserEntity } from "../../user/entities/user.entity";
+import { UserEntity } from "../../user/entitites/user.entity";
 import { AuthService } from "../services/auth.service";
 
 export class AuthController extends AuthService {

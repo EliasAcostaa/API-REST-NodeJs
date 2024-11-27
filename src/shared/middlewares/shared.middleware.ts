@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import passport from "passport";
 import { RoleType } from "../../user/dto/user.dto";
-import { UserEntity } from "../../user/entities/user.entity";
+import { UserEntity } from "../../user/entitites/user.entity";
 import { HttpResponse } from "../response/http.response";
 
 export class SharedMiddleware {

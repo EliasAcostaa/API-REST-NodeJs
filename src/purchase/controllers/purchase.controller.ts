@@ -14,7 +14,7 @@ export class PurchaseController {
       if (data.length === 0) {
         return this.httpResponse.NotFound(res, "No existe dato");
       }
-      return this.httpResponse.Ok(res, data);
+      return this.httpResponse.OK(res, data);
     } catch (e) {
       console.error(e);
       return this.httpResponse.Error(res, e);
@@ -27,7 +27,7 @@ export class PurchaseController {
       if (!data) {
         return this.httpResponse.NotFound(res, "No existe dato");
       }
-      return this.httpResponse.Ok(res, data);
+      return this.httpResponse.OK(res, data);
     } catch (e) {
       console.error(e);
       return this.httpResponse.Error(res, e);
@@ -36,7 +36,7 @@ export class PurchaseController {
   async createPurchase(req: Request, res: Response) {
     try {
       const data = await this.purchaseService.createPurchase(req.body);
-      return this.httpResponse.Ok(res, data);
+      return this.httpResponse.OK(res, data);
     } catch (e) {
       console.error(e);
       return this.httpResponse.Error(res, e);
@@ -53,7 +53,7 @@ export class PurchaseController {
         return this.httpResponse.NotFound(res, "Hay un error en actualizar");
       }
 
-      return this.httpResponse.Ok(res, data);
+      return this.httpResponse.OK(res, data);
     } catch (e) {
       console.error(e);
       return this.httpResponse.Error(res, e);
@@ -67,7 +67,7 @@ export class PurchaseController {
         return this.httpResponse.NotFound(res, "Hay un error en borrar");
       }
 
-      return this.httpResponse.Ok(res, data);
+      return this.httpResponse.OK(res, data);
     } catch (e) {
       console.error(e);
       return this.httpResponse.Error(res, e);

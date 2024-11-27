@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "description": "api rest con nodejs y typescript",
   "main": "index.js",
-  "type":"module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && node dist/server.js",
     "start:dev": "tsc && concurrently \"tsc -w\" \"nodemon dist/server.js\"",
-    "start:prod": "SET NODE_ENV=production && npm start",
+    "start:prod": "SET NODE_ENV=production && npm start", 
     "typeorm": "typeorm-ts-node-esm -d ./dist/config/data.source.js",
     "m:gen": "npm run typeorm migration:generate",
     "m:run": "npm run typeorm migration:run"

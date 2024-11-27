@@ -1,7 +1,7 @@
 import { Column, Entity, ManyToOne, JoinColumn, OneToMany } from "typeorm";
 import { BaseEntity } from "../../config/base.entity";
 import { CategoryEntity } from "../../category/entitites/category.entity";
-import { PurchaseProductEntity } from "../../purchase/entities/purchases-products.entity";
+import { PurchaseProductEntity } from "../../purchase/entitites/purchases-products.entity";
 
 @Entity({ name: "product" })
 export class ProductEntity extends BaseEntity {

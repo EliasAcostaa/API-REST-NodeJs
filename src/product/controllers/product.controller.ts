@@ -38,7 +38,7 @@ export class ProductController {
     const { search } = req.query;
     try {
       if (search !== undefined) {
-        const data = await this.productService.findProductsByName(search);
+        const data = await this.productService.findProductByName(search.toString());
         if (!data) {
           return this.httpResponse.NotFound(res, "No existe dato");
         }

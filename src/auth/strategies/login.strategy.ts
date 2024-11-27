@@ -1,6 +1,6 @@
 import { AuthService } from "../services/auth.service";
 import { Strategy as LocalStrategy, VerifyFunction } from "passport-local";
-import { UserEntity } from "../../user/entities/user.entity";
+import { UserEntity } from "../../user/entitites/user.entity";
 import { PassportUse } from "../utils/passport.use";
 
 const authService: AuthService = new AuthService();
