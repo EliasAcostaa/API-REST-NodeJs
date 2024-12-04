@@ -20,6 +20,8 @@ class ServerBootstrap extends ConfigServer {
 
   constructor() {
     super();
+    
+    console.log("server bootstrap port", this.port);
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.passportUse();
